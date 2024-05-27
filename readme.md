@@ -14,14 +14,19 @@ A multi-agent reinforcement learning library.
 - 分布式训练框架, 支持自博弈以及不对称的多种群博弈, 评估.
 
 ## DZP使用体验
-运行SMAC
+运行SMAC体验
 ```sh
 docker pull pytorch/pytorch:1.11.0-cuda11.3-cudnn8-runtime
 docker run -itd --privileged --gpus all --network=host --name=grl2 pytorch/pytorch:1.11.0-cuda11.3-cudnn8-runtime /bin/bash
 docker exec -it grl2 /bin/bash
-conda create -n grl2 python=3.8 
-conda activate grl2
-cd scripts && install_sc2.sh
+apt-get update && apt-get install libgl1-mesa-glx git curl wget libglib2.0-0
+
+conda create -n grl2 python=3.9 
+source activate grl2
+bash install_sc2.sh
+pip install -r requirements.txt
+
+python run/train.py -a ppo -e smac-5m_vs_6m -c smac
 ```
 ## 使用指南
 

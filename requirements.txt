@@ -1,5 +1,5 @@
-tensorflow-gpu
-tensorflow-probability
+tensorflow
+# tensorflow-probability
 ray
 scipy
 pandas
@@ -10,4 +10,9 @@ opencv-python
 gym
 atari_py
 pysc2
-gfootball
+# gfootball
+git+https://github.com/oxwhirl/smac.git
+jax[cpu]
+dm-haiku
+distrax
+torch
